@@ -28,7 +28,7 @@ def section(chapter):
 @app.route('/<chapter>/<section>')
 def text(chapter, section):
     chapters, sections =  list_transcripts(COURSE, chapter)
-    lines = [line.split(maxsplit=1)[1] for line in open(f'async-techniques-python-course/transcripts/{chapter}/{section}')]
+    lines = [line.split(maxsplit=1)[1] for line in open(f'{COURSE}/transcripts/{chapter}/{section}')]
     text = " ".join(lines)
     return flask.render_template('section.html', course=COURSE, chapter=chapter, section=section, text=text, chapters=chapters, sections=sections)
 
