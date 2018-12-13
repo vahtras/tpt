@@ -1,0 +1,3 @@
+[submodule "async-techniques-python-course"]
+	path = async-techniques-python-course
+	url = https://github.com/talkpython/async-techniques-python-course
