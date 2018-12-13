@@ -3,7 +3,7 @@
 <h1>{{ course }}</h1>
 <ul>
     {% for c in chapters %}
-    <li><a href="/{{ c }}">{{ c }}</a></li>
+    <li><a href="/{{ course }}/{{ c }}">{{ c }}</a></li>
     {% endfor %}
 </ul>
 {%  endblock page %}

@@ -16,21 +16,22 @@ def list_transcripts(course, chapter=None):
 
 
 @app.route('/')
-def index():
-    chapters, _ =  list_transcripts(COURSE)
-    return flask.render_template('index.html', course=COURSE, chapters=chapters)
+@app.route('/<course>')
+def index(course=COURSE):
+    chapters, _ =  list_transcripts(course)
+    return flask.render_template('index.html', course=course, chapters=chapters)
 
-@app.route('/<chapter>')
-def section(chapter):
-    chapters, sections =  list_transcripts(COURSE, chapter)
+@app.route('/<course>/<chapter>')
+def section(course, chapter):
+    chapters, sections =  list_transcripts(course, chapter)
     return flask.render_template('chapter.html', course=COURSE, chapter=chapter, chapters=chapters, sections=sections)
 
-@app.route('/<chapter>/<section>')
-def text(chapter, section):
-    chapters, sections =  list_transcripts(COURSE, chapter)
-    lines = [line.split(maxsplit=1)[1] for line in open(f'{COURSE}/transcripts/{chapter}/{section}')]
+@app.route('/<course>/<chapter>/<section>')
+def text(course, chapter, section):
+    chapters, sections =  list_transcripts(course, chapter)
+    lines = [line.split(maxsplit=1)[1] for line in open(f'{course}/transcripts/{chapter}/{section}')]
     text = " ".join(lines)
-    return flask.render_template('section.html', course=COURSE, chapter=chapter, section=section, text=text, chapters=chapters, sections=sections)
+    return flask.render_template('section.html', course=course, chapter=chapter, section=section, text=text, chapters=chapters, sections=sections)
 
 if __name__ == "__main__":
     app.run(debug=True)
