@@ -1,4 +1,5 @@
 import os
+import re
 import flask
 import flask_bootstrap
 app = flask.Flask(__name__)
@@ -8,12 +9,17 @@ bs.__init__(app)
 COURSE = 'async-techniques-python-course'
 
 def list_transcripts(course, chapter=None):
-    chapters = sorted(os.listdir(f'{course}/transcripts'))
+    chapters = nsorted(os.listdir(f'{course}/transcripts'))
     sections = ""
     if chapter:
-        sections = sorted(os.listdir(f'{course}/transcripts/{chapter}'))
+        sections = nsorted(os.listdir(f'{course}/transcripts/{chapter}'))
     return chapters, sections
 
+def nsorted(seq):
+    def initial_numbers(item):
+        num = int(re.match(r'^(\d+)', item).group(1))
+        return num
+    return sorted(seq, key=initial_numbers)
 
 @app.route('/')
 @app.route('/<course>')
