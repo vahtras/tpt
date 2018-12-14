@@ -1,3 +1,6 @@
 [submodule "async-techniques-python-course"]
 	path = async-techniques-python-course
 	url = https://github.com/talkpython/async-techniques-python-course
+[submodule "100daysofcode-with-python-course"]
+	path = 100daysofcode-with-python-course
+	url = https://github.com/talkpython/100daysofcode-with-python-course.git

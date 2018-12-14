@@ -24,7 +24,7 @@ def index(course=COURSE):
 @app.route('/<course>/<chapter>')
 def section(course, chapter):
     chapters, sections =  list_transcripts(course, chapter)
-    return flask.render_template('chapter.html', course=COURSE, chapter=chapter, chapters=chapters, sections=sections)
+    return flask.render_template('chapter.html', course=course, chapter=chapter, chapters=chapters, sections=sections)
 
 @app.route('/<course>/<chapter>/<section>')
 def text(course, chapter, section):
