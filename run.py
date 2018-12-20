@@ -39,5 +39,6 @@ def text(course, chapter, section):
     text = " ".join(lines)
     return flask.render_template('section.html', course=course, chapter=chapter, section=section, text=text, chapters=chapters, sections=sections)
 
+#
 if __name__ == "__main__":
     app.run(debug=True)
