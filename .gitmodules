@@ -7,3 +7,6 @@
 [submodule "consuming_services_python_demos"]
 	path = consuming_services_python_demos
 	url = https://github.com/talkpython/consuming_services_python_demos
+[submodule "write-pythonic-code-demos"]
+	path = write-pythonic-code-demos
+	url = https://github.com/talkpython/write-pythonic-code-demos
