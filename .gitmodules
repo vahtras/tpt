@@ -4,3 +4,6 @@
 [submodule "100daysofcode-with-python-course"]
 	path = 100daysofcode-with-python-course
 	url = https://github.com/talkpython/100daysofcode-with-python-course.git
+[submodule "consuming_services_python_demos"]
+	path = consuming_services_python_demos
+	url = https://github.com/talkpython/consuming_services_python_demos
