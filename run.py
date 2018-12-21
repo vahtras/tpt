@@ -17,7 +17,7 @@ def list_transcripts(course, chapter=None):
 
 def nsorted(seq):
     def initial_numbers(item):
-        num = int(re.match(r'^(\d+)', item).group(1))
+        num = int(re.match(r'^[^\d]*(\d+)', item).group(1))
         return num
     return sorted(seq, key=initial_numbers)
 
